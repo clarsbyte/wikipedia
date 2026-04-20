@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     target: "esnext",
     rollupOptions: {
-      input: { graph: "graph.html" },
+      input: { graph: "graph.html", bookmarks: "bookmarks.html" },
     },
   },
   server: {

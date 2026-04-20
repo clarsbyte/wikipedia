@@ -4,6 +4,7 @@ import * as THREE from "three";
 import { forceCollide } from "d3-force-3d";
 import SpriteText from "three-spritetext";
 import { fetchLinks } from "./wiki.js";
+import { BOOKMARKS_KEY } from "./Bookmarks.jsx";
 
 const MAX_NODES = 500;
 const LINK_DISTANCE = 110;
@@ -34,6 +35,26 @@ export default function Graph() {
   const [size, setSize] = useState({ w: window.innerWidth, h: window.innerHeight });
   const [expandMode, setExpandMode] = useState(true);
   const [helpOpen, setHelpOpen] = useState(true);
+  const [bookmarks, setBookmarks] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || "[]"); }
+    catch { return []; }
+  });
+
+  const isBookmarked = bookmarks.some((b) => b.title === rootTitle && b.lang === lang);
+
+  const toggleBookmark = useCallback(() => {
+    setBookmarks((prev) => {
+      const next = isBookmarked
+        ? prev.filter((b) => !(b.title === rootTitle && b.lang === lang))
+        : [...prev, { title: rootTitle, lang, addedAt: Date.now() }];
+      localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(next));
+      return next;
+    });
+  }, [isBookmarked, rootTitle, lang]);
+
+  const openBookmarks = useCallback(() => {
+    window.open(chrome.runtime.getURL("bookmarks.html"), "_blank");
+  }, []);
 
   useEffect(() => { document.title = `${rootTitle} — Knowledge Graph`; }, [rootTitle]);
 
@@ -287,7 +308,18 @@ export default function Graph() {
       </div>
 
       <aside className={`hud${embedded ? " embedded" : ""}`}>
-        <div className="hud-eyebrow">Article · {lang}.wikipedia</div>
+        <div className="hud-eyebrow">
+          Article · {lang}.wikipedia
+          <button
+            type="button"
+            className={`bookmark-btn${isBookmarked ? " active" : ""}`}
+            onClick={toggleBookmark}
+            aria-label={isBookmarked ? "Remove bookmark" : "Bookmark this article"}
+            title={isBookmarked ? "Remove bookmark" : "Bookmark this article"}
+          >
+            {isBookmarked ? "★" : "☆"}
+          </button>
+        </div>
         <h1 className="hud-title">{rootTitle}</h1>
 
         <div className="hud-stats">
@@ -332,6 +364,7 @@ export default function Graph() {
         <div className="hud-actions">
           <button onClick={handleReset}>Recenter</button>
           <button onClick={handleReload}>Reload</button>
+          <button onClick={openBookmarks}>Bookmarks</button>
         </div>
       </div>
 

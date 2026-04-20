@@ -13,3 +13,6 @@
 - (synthesizer) [extension-storage] localStorage persists across extension contexts (graph view and bookmarks page) when accessed from the same chrome-extension:// origin, enabling bookmark state sharing without background scripts.
 - (synthesizer) [extension-build] Expose new extension pages (bookmarks.html) in manifest.json web_accessible_resources and add them as separate Rollup build inputs in vite.config.js to make them available as full-page views.
 - (synthesizer) [extension-navigation] Opening extension pages in new tabs uses window.open() with the full chrome-extension:// URL, not relative paths, to navigate outside the current view context.
+- (synthesizer) [storage] localStorage is shared between graph view and bookmarks page in a Chrome extension, enabling seamless cross-page bookmark persistence without requiring chrome.storage API.
+- (synthesizer) [build-config] New HTML entry points in Chrome extensions must be added to manifest.json web_accessible_resources and vite.config.js Rollup inputs to be properly bundled and accessible.
+- (synthesizer) [ux-pattern] Bookmark UI state (☆/★) provides immediate visual feedback of saved status and should be toggled synchronously in component state to avoid UI lag.

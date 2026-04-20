@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Wikipedia Knowledge Graph",
+  "version": "0.1.0",
+  "description": "Visualize Wikipedia article links as an interactive space-themed knowledge graph.",
+  "permissions": ["activeTab", "tabs", "notifications", "scripting"],
+  "host_permissions": ["*://*.wikipedia.org/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.wikipedia.org/wiki/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["graph.html", "assets/*"],
+      "matches": ["*://*.wikipedia.org/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open Wikipedia Knowledge Graph"
+  }
+}

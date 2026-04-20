@@ -1,0 +1,45 @@
+{
+  "projectId": "e14fd691b746",
+  "rootPath": "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia",
+  "files": {
+    "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\vite.config.js": {
+      "filePath": "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\vite.config.js",
+      "contentHash": "0281c4f1ec71a63dcb9f6f25570b9fa78d666a786ab3919adc7bf11816371d89",
+      "entityCount": 0,
+      "lastIndexedAt": 1776656806588
+    },
+    "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\background.js": {
+      "filePath": "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\background.js",
+      "contentHash": "6b147594eed15d0a3db205abaaddc421d08b54b3d985cf0cb2ee1842712b481f",
+      "entityCount": 0,
+      "lastIndexedAt": 1776656806588
+    },
+    "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\content.js": {
+      "filePath": "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\content.js",
+      "contentHash": "5b4d78ae942f3a648091dbc1fd22141fa7378e9c993fda426496b51e5975db39",
+      "entityCount": 0,
+      "lastIndexedAt": 1776656806588
+    },
+    "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\Graph.jsx": {
+      "filePath": "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\Graph.jsx",
+      "contentHash": "ff499bdd2c95f1a26867c78ee69f8d4b1df9cbdd1ef45c90f96c591970e8189d",
+      "entityCount": 0,
+      "lastIndexedAt": 1776656806588
+    },
+    "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\main.jsx": {
+      "filePath": "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\main.jsx",
+      "contentHash": "dfac960a24a6d9946759af23fd42158f088bb28188eb5a4a51bcd3a559edb4f8",
+      "entityCount": 0,
+      "lastIndexedAt": 1776656806588
+    },
+    "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\wiki.js": {
+      "filePath": "C:\\Users\\Clarissa\\Documents\\Code\\wikipedia\\src\\wiki.js",
+      "contentHash": "5e653a4e6d3cdc5ec9a6b677e321e461fb66ed04185fff5f6ad706f2e376fbf2",
+      "entityCount": 0,
+      "lastIndexedAt": 1776656806588
+    }
+  },
+  "totalEntities": 0,
+  "gitHead": null,
+  "lastIndexedAt": 1776656882068
+}
